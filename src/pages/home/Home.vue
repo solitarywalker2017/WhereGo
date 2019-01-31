@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <home-header></home-header>
-    <slider></slider>
+    <home-swiper></home-swiper>
   </div>
 </template>
 
 <script>
 import HomeHeader from "./components/Header";
-import Slider from "./components/Slider";
+import HomeSwiper from "./components/Swiper";
 export default {
-  components: { HomeHeader, Slider },
+  components: { HomeHeader, HomeSwiper },
   name: "Home"
 };
 </script>
