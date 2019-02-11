@@ -1,14 +1,14 @@
 <template >
     <div id="icons">
-      <swiper :option="swiperOption">
-      <swiper-slide v-for="(page,index) of pages" :key="index">
-        <div class="icon" v-for="item of page" :key="item.id">
-            <img class="icon-img" :src="item.url"/>
-            <p class="icon-desc">{{item.desc}}</p>
-        </div>
-     </swiper-slide>
-     <div class="swiper-pagination"  slot="pagination"></div>
-     </swiper>
+        <swiper :option="swiperOption">
+          <swiper-slide v-for="(page,index) of pages" :key="index">
+            <div class="icon" v-for="item of page" :key="item.id">
+                <img class="icon-img" :src="item.url"/>
+                <p class="icon-desc">{{item.desc}}</p>
+            </div>
+          </swiper-slide>
+           <div class="swiper-pagination"  slot="pagination"></div>
+        </swiper>
     </div>
 </template>
 
@@ -62,11 +62,13 @@ export default {
 @import "~@/assets/styles/mixins.styl"
 #icons >>> .swiper-container
     // 宽高自适应
+    overflow:hidden
     width:100%
     height:0
     padding-bottom:50%
 #icons
     background:#fff
+    margin-bottom:.01rem
     .icon
         overflow:hidden
         float:left
