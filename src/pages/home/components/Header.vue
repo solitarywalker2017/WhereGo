@@ -2,7 +2,9 @@
   <div id="header">
     <div class="back"><span class="iconfont">&#xe624;</span></div>
     <div class="search"><span class="iconfont">&#xe632;</span>输入城市/景点/游玩主题</div>
-    <div class="location">北京<span class="iconfont">&#xe64a;</span></div>
+    <router-link to="/city">
+      <div class="location">{{this.city}}<span class="iconfont">&#xe64a;</span></div>
+    </router-link>
   </div>
 </template>
 
@@ -36,11 +38,13 @@
     float:right
     width:1.32rem
     text-align:center
+    color:#fff
     span
       font-size:.2rem
 </style>
 <script>
 export default {
+  props: ["city"],
   name: "HomeHeader"
 };
 </script>

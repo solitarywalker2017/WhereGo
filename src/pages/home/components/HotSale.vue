@@ -1,39 +1,13 @@
 <template>
     <div id="hotsale">
+        添加到15个
          <p class="title"><img src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png">本周热门榜单</p>
-         <swiper :options="swiperOption">
-            <swiper-slide>
-                <div class="item">
-                    <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
-                    <p class="item-title">故宫</p>
-                    <p><span class="item-price">¥20</span>起</p>
-                </div>
-                <div class="item">
-                    <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
-                    <p class="item-title">故宫</p>
-                    <p><span class="item-price">¥20</span>起</p>
-                </div>
-                <div class="item">
-                    <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
-                    <p class="item-title">故宫</p>
-                    <p><span class="item-price">¥20</span>起</p>
-                </div>
-            </swiper-slide>
-            <swiper-slide>
-                <div class="item">
-                    <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
-                    <p class="item-title">故宫</p>
-                    <p><span class="item-price">¥20</span>起</p>
-                </div>
-                <div class="item">
-                    <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
-                    <p class="item-title">故宫</p>
-                    <p><span class="item-price">¥20</span>起</p>
-                </div>
-                <div class="item">
-                    <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
-                    <p class="item-title">故宫</p>
-                    <p><span class="item-price">¥20</span>起</p>
+         <swiper>
+            <swiper-slide v-for="(page,index) of pages" :key="index">
+                <div class="item"  v-for="item of page" :key="item.id">
+                    <img :src="item.imgUrl" class="item-img"/>
+                    <p class="item-title">{{item.title}}</p>
+                    <p><span class="item-price">¥{{item.price}}</span>起</p>
                 </div>
             </swiper-slide>
          </swiper>
@@ -43,15 +17,24 @@
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
+  props: ["hotSaleList"],
   name: "HotSale",
   components: {
     swiper,
     swiperSlide
   },
-  data: function () {
-    return {
-      swiperOption: {}
-    };
+  computed: {
+    pages: function () {
+      const pages = [];
+      this.hotSaleList.forEach(function (item, index) {
+        var page = Math.floor(index / 3);
+        if (!pages[page]) {
+          pages[page] = [];
+        }
+        pages[page].push(item);
+      });
+      return pages;
+    }
   }
 };
 </script>

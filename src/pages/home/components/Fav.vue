@@ -1,5 +1,6 @@
 <template>
     <div id="fav">
+        添加到10个
         <p class="title"><img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png">猜你喜欢</p>
         <ul>
             <li class="fav-item border-bottom">
@@ -99,7 +100,6 @@
                     </div>
             </li>
         </ul>
-        <p class="showall">查看所有产品</p>
     </div>
 </template>
 
@@ -168,7 +168,4 @@ export default {
                 margin: .6rem 0
                 color:#ff5555
                 ellipsis()
-    .showall
-        text-align:center
-        color:#00afc7
 </style>

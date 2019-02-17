@@ -62,10 +62,10 @@ export default {
         .img-warpper
           overflow:hidden
           height:0
-          padding-bottom:33.9%
+          padding-bottom:37.09%
           margin:.3rem 0
           img
-           width:100% 
+           width:100%
         .item-intro
             margin:.16rem 0
             color:#616161
