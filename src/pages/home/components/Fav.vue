@@ -130,6 +130,7 @@ export default {
         background:#fff
         min-width:0
         .fav-item-img
+            float:left
             position:absolute
             width:2rem
             height: 2rem
@@ -148,7 +149,6 @@ export default {
             border-radius:0 0 .1rem 0
         .fav-item-desc
             float:right
-            width:4.8rem;
             p
                 margin:.2rem 0
             .item-title

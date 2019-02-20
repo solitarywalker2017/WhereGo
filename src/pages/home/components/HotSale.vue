@@ -40,36 +40,37 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-    #hotsale
-       margin-top:.18rem
-       background:#fff
-       overflow:hidden
-       width:100%
-       height:0
-       padding-bottom:53.6%
-       padding-top:.3rem
-       .title
-          text-indent:.2rem
-          padding-bottom: .3rem
-          img
-            width:.3rem
-            height:.3rem
-        .item
-            display:inline-block
-            float:left
-            margin:0 .15rem
-            width:2.18rem
-            height:3rem
-            p
-                text-align:center
-                color:#616161
-            .item-img
-                width:2rem
-                height:2rem
-                margin: .2rem auto
-            .item-title
-                color:#000
-            .item-price
-                color:#ff8300
-
+#hotsale >>> .swiper-container
+  padding:0 .48rem
+  width:100%
+#hotsale
+  margin-top:.18rem
+  background:#fff
+  overflow:hidden
+  width:100%
+  height:0
+  padding-bottom:53.6%
+  padding-top:.3rem
+  .title
+    text-indent:.2rem
+    padding-bottom: .3rem
+    img
+      width:.3rem
+      height:.3rem
+  .item
+    display:inline-block
+    float:left
+    width:2.18rem
+    height:3rem
+      p
+        text-align:center
+        color:#616161
+      .item-title
+        color:#000
+      .item-price
+        color:#ff8300
+  .item-img
+    width:2rem
+    height:2rem
+    margin: .2rem auto
 </style>

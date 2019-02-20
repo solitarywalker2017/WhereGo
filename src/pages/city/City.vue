@@ -6,8 +6,8 @@
         </router-link>
         <p>城市选择</p>
       </div>
-      <city-list :hotCities="hotCities" :cities="cities" :alphabet="alphabet"></city-list>
-      <alphabet :alphabet="alphabet"></alphabet>
+      <city-list :hotCities="hotCities" :cities="cities" :current="currentArea"></city-list>
+      <alphabet :alphabet="alphabet" @selectedLetter="selectedLetter"></alphabet>
     </div>
 </template>
 
@@ -22,7 +22,8 @@ export default {
     return {
       hotCities: [],
       cities: [],
-      alphabet: []
+      alphabet: [],
+      currentArea: ""
     };
   },
   methods: {
@@ -37,6 +38,9 @@ export default {
           }
         }
       });
+    },
+    selectedLetter: function (res) {
+      this.currentArea = res;
     }
   },
   mounted () {

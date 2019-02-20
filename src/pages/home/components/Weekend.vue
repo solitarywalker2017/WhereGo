@@ -4,7 +4,7 @@
        <ul>
             <li class="weekend-item">
                     <div class="img-warpper">
-                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
+                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
                     </div>
                     <div class="fav-item-desc">
                         <p class="item-title">京城周末狂欢</p>
@@ -13,7 +13,7 @@
             </li>
             <li class="weekend-item">
                     <div class="img-warpper">
-                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
+                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
                     </div>
                     <div class="fav-item-desc">
                         <p class="item-title">京城周末狂欢</p>
@@ -22,7 +22,7 @@
             </li>
             <li class="weekend-item">
                     <div class="img-warpper">
-                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
+                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
                     </div>
                     <div class="fav-item-desc">
                         <p class="item-title">京城周末狂欢</p>
@@ -31,7 +31,7 @@
             </li>
             <li class="weekend-item">
                     <div class="img-warpper">
-                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
+                        <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg" class="item-img"/>
                     </div>
                     <div class="fav-item-desc">
                         <p class="item-title">京城周末狂欢</p>
@@ -60,12 +60,12 @@ export default {
         height:100%
         width:100%
         .img-warpper
-          overflow:hidden
-          height:0
-          padding-bottom:37.09%
-          margin:.3rem 0
-          img
-           width:100%
+          overflow: hidden
+          height: 0
+          padding-bottom: 37.09%
+          .item-img
+            width:100%
+            height:2.8rem
         .item-intro
             margin:.16rem 0
             color:#616161

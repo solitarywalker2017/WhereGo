@@ -8,10 +8,10 @@
           <li class="hot-item" v-for="item of this.hotCities" :key="item.id" :spell="item.spell">{{item.name}}</li>
         </ul>
       </div>
-      <div class="area" v-for="(city,index) of this.cities":key="index">
+      <div class="area" v-for="(city,index) of this.cities" :key="index" :ref="index">
         <p class="title border-topbottom">{{index}}</p>
         <ul>
-            <li class="list-district border-topbottom"  v-for="item of city":key="item.id" :spell="item.spell">{{item.name}}</li>
+            <li class="list-district border-topbottom"  v-for="item of city" :key="item.id" :spell="item.spell">{{item.name}}</li>
         </ul>
       </div>
     </div>
@@ -21,10 +21,18 @@
 <script>
 import BScroll from "better-scroll";
 export default {
-  props: ["hotCities", "cities"],
+  props: ["hotCities", "cities", "current"],
   name: "CityList",
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper);
+  },
+  watch: {
+    current: function () {
+      if (this.current) {
+        let element = this.$refs[this.current][0];
+        this.scroll.scrollToElement(element);
+      }
+    }
   }
 };
 </script>
