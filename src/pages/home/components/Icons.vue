@@ -1,6 +1,6 @@
-<template >
+<template>
     <div id="icons">
-        <swiper :option="swiperOption">
+        <swiper :options="swiperOption">
           <swiper-slide v-for="(page,index) of pages" :key="index">
             <div class="icon" v-for="item of page" :key="item.id">
                 <img class="icon-img" :src="item.url"/>
@@ -26,7 +26,7 @@ export default {
       swiperOption: {
         pagination: {
           el: ".swiper-pagination"
-        }
+        } // 显示底部圆点
       }
     };
   },

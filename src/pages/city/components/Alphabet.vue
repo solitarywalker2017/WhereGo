@@ -15,11 +15,10 @@ export default {
   data: function () {
     return {
       touchStatus: false,
-      startY: 0,
-      timer: null  // 延迟执行时间
+      startY: 0
     };
   },
-  updated() {
+  updated () {
     this.startY = this.$refs["A"][0].offsetTop; // 获取起始高度
   },
   methods: {
@@ -32,16 +31,11 @@ export default {
     },
     handleTouchMove: function (e) {
       if (this.touchStatus) {
-        if(this.timer){
-          clearTimeout();
+        const touchY = e.touches[0].clientY - 40; // 40为顶部高度
+        const index = Math.floor((touchY - this.startY) / 20); // 20为一个.item的高度
+        if (index >= 0 && index < this.alphabet.length) {
+          this.$emit("selectedLetter", this.alphabet[index]);
         }
-        setTimeout(() => {
-          const touchY = e.touches[0].clientY - 40; // 40为顶部高度
-          const index = Math.floor((touchY - this.startY) / 20); // 20为一个.item的高度
-          if (index >= 0 && index < this.alphabet.length) {
-             this.$emit("selectedLetter", this.alphabet[index]);
-          }
-        },16);
       }
     },
     handleTouchEnd: function () {

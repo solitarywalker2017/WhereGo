@@ -1,111 +1,49 @@
 <template>
     <div id="fav">
-        添加到10个
         <p class="title"><img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png">猜你喜欢</p>
         <ul>
-            <li class="fav-item border-bottom">
-                    <img  class ="fav-item-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
-                    <span class="fav-item-tip">随买随用</span>
-                    <div class="fav-item-desc">
-                        <p class="item-title">故宫</p>
-                        <p>
-                            <span class="item-score">星星组件</span>
-                            <span class="item-comments">345831条评论</span>
-                        </p>
-                        <p>
-                            <span class="item-price"><mark>¥20</mark>起</span>
-                            <span class="item-location">东城区</span>
-                        </p>
-                        <p class="item-intro">世界五大宫之首，穿越与您近在咫尺</p>
-                    </div>
-            </li>
-             <li class="fav-item border-bottom">
-                    <img  class ="fav-item-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
-                    <span class="fav-item-tip">随买随用</span>
-                    <div class="fav-item-desc">
-                        <p class="item-title">故宫</p>
-                        <p>
-                            <span class="item-score">星星组件</span>
-                            <span class="item-comments">345831条评论</span>
-                        </p>
-                        <p>
-                            <span class="item-price"><mark>¥20</mark>起</span>
-                            <span class="item-location">东城区</span>
-                        </p>
-                        <p class="item-intro">世界五大宫之首，穿越与您近在咫尺</p>
-                    </div>
-            </li>
-             <li class="fav-item border-bottom">
-                    <img  class ="fav-item-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
-                    <span class="fav-item-tip">随买随用</span>
-                    <div class="fav-item-desc">
-                        <p class="item-title">故宫</p>
-                        <p>
-                            <span class="item-score">星星组件</span>
-                            <span class="item-comments">345831条评论</span>
-                        </p>
-                        <p>
-                            <span class="item-price"><mark>¥20</mark>起</span>
-                            <span class="item-location">东城区</span>
-                        </p>
-                        <p class="item-intro">世界五大宫之首，穿越与您近在咫尺</p>
-                    </div>
-            </li>
-             <li class="fav-item border-bottom">
-                    <img  class ="fav-item-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
-                    <span class="fav-item-tip">随买随用</span>
-                    <div class="fav-item-desc">
-                        <p class="item-title">故宫</p>
-                        <p>
-                            <span class="item-score">星星组件</span>
-                            <span class="item-comments">345831条评论</span>
-                        </p>
-                        <p>
-                            <span class="item-price"><mark>¥20</mark>起</span>
-                            <span class="item-location">东城区</span>
-                        </p>
-                        <p class="item-intro">世界五大宫之首，穿越与您近在咫尺</p>
-                    </div>
-            </li>
-             <li class="fav-item border-bottom">
-                    <img  class ="fav-item-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
-                    <span class="fav-item-tip">随买随用</span>
-                    <div class="fav-item-desc">
-                        <p class="item-title">故宫</p>
-                        <p>
-                            <span class="item-score">星星组件</span>
-                            <span class="item-comments">345831条评论</span>
-                        </p>
-                        <p>
-                            <span class="item-price"><mark>¥20</mark>起</span>
-                            <span class="item-location">东城区</span>
-                        </p>
-                        <p class="item-intro">世界五大宫之首，穿越与您近在咫尺</p>
-                    </div>
-            </li>
-             <li class="fav-item border-bottom">
-                    <img  class ="fav-item-img" src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg"/>
-                    <span class="fav-item-tip">随买随用</span>
-                    <div class="fav-item-desc">
-                        <p class="item-title">故宫</p>
-                        <p>
-                            <span class="item-score">星星组件</span>
-                            <span class="item-comments">345831条评论</span>
-                        </p>
-                        <p>
-                            <span class="item-price"><mark>¥20</mark>起</span>
-                            <span class="item-location">东城区</span>
-                        </p>
-                        <p class="item-intro">世界五大宫之首，穿越与您近在咫尺</p>
-                    </div>
-            </li>
+              <router-link :to="'/detail/'+item.id" class="fav-item border-bottom" tag="li"
+                v-for="item of favList" :key="item.id" :ref="item.id">
+                      <img  class ="fav-item-img" :src="item.imgUrl"/>
+                      <span class="fav-item-tip">{{item.tip}}</span>
+                      <div class="fav-item-desc">
+                          <p class="item-title">{{item.title}}</p>
+                          <p>
+                              <span class="item-score">{{item.score}}星星组件</span>
+                              <span class="item-comments">{{item.comments}}条评论</span>
+                          </p>
+                          <p>
+                              <span class="item-price"><mark>¥{{item.price}}</mark>起</span>
+                              <span class="item-location">{{item.location}}</span>
+                          </p>
+                          <p class="item-intro">{{item.intro}}</p>
+                      </div>
+              </router-link>
         </ul>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "HomeFav"
+  name: "HomeFav",
+  data () {
+    return {
+      favList: []
+    };
+  },
+  methods: {
+    getMockData: function () {
+      axios.get("/api/fav.json").then((res) => {
+        if (res.data.ret && res.data.data) {
+          this.favList = res.data.data.favList;
+        }
+      });
+    }
+  },
+  mounted () {
+    this.getMockData();
+  }
 };
 </script>
 
@@ -149,11 +87,11 @@ export default {
             border-radius:0 0 .1rem 0
         .fav-item-desc
             float:right
+            width:4.4rem
             p
                 margin:.2rem 0
             .item-title
                 font-size:15px
-                letter-spacing:.2rem
                 height:.5rem
                 line-height:.5rem
             .item-price > mark

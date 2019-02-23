@@ -1,6 +1,5 @@
 <template>
     <div id="hotsale">
-        添加到15个
          <p class="title"><img src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png">本周热门榜单</p>
          <swiper>
             <swiper-slide v-for="(page,index) of pages" :key="index">
