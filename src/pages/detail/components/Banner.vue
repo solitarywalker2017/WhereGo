@@ -2,7 +2,6 @@
   <div id="banner">
     <div @click="showGallery">
       <img src="http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"/>
-      <div class="back"><span class="iconfont">&#xe624;</span></div>
       <div class="album"><span class="iconfont">&#xe6dd;</span>8</div>
       <p class="desc">故宫(AAAAA景区)</p>
     </div>
@@ -51,18 +50,6 @@ export default {
   color:#fff
   img
     width:100%
-  .back
-    position:absolute
-    left:.2rem
-    top:.1rem
-    z-index:9
-    width:.7rem
-    height:.7rem
-    line-height:.7rem
-    text-align:center
-    border-radius:50%
-    background:#616970
-    font-size:.4rem
   .album
     position:absolute
     left:.2rem
